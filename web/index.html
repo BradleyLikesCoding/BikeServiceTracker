@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eel Example</title>
+  <script src="../eel.js"></script>
+</head>
+<body>
+  <h1>Random Number Generator</h1>
+  <div id="result"></div>
+  <button onclick="eel.random_python()(function(num){
+    document.getElementById('result').innerHTML = num;
+  })">Get Random Number</button>
+</body>
+</html>
