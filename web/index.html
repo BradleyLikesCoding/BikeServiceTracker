@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
+  <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>Bike Service</title>
   <link rel="stylesheet" href="styles.css">
@@ -10,14 +11,18 @@
 
 <body>
   <h1>Bike Service</h1>
- <p> <button>Add Ride</button></p>
+ <p> <button id="add_ride" onclick="add_ride_popup_function()">Add Ride</button></p>
+<dialog id="add_ride_popup">
+  <h3>I like turtles</h3>
+</dialog>
  <p><button>Setup Service Reminder</button></p> 
  <p><h2>Service Needed Now</h2></p>
 <h3><ul>
-  <li><button>Add To Log</button>Fork Service</li>
-  <li><button>Add To Log</button>brakes</li>
-  <li><button>Add To Log</button>wash</li>
+  <li><button class="add_log">Add To Log</button>Fork Service</li>
+  <li><button class="add_log">Add To Log</button>brakes</li>
+  <li><button class="add_log">Add To Log</button>wash</li>
  </ul>
-  </h3> 
+  </h3>
+  <p><button>Add Bike</button><button>Remove Bike</button></p>
 </body>
 </html>

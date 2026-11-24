@@ -1,2 +1,22 @@
-Body{text-align: center;}
-ul{padding: 0; margin: 0; list-style-type: none;}
+Body {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.add_log {
+    color: rgb(4, 58, 88);
+    border-radius: 6px;
+    cursor: pointer;
+    border-style: solid;
+    border-color: rgb(4, 58, 88);
+    margin-right: 6px;
+}
+
+button {
+    cursor: pointer;
+}
