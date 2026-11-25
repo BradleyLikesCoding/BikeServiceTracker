@@ -20,3 +20,9 @@ ul {
 button {
     cursor: pointer;
 }
+.number_inputs {
+    width: 40px;
+}
+.popups {
+    border-radius: 12px;
+}

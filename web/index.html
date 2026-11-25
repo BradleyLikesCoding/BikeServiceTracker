@@ -11,12 +11,24 @@
 
 <body>
   <h1>Bike Service</h1>
- <p> <button id="add_ride" onclick=open_add_ride()>Add Ride</button></p>
-<dialog id="add_ride_popup">
+ <p> <button id="add_ride" onclick=open_add_ride() class="open_close_buttons">Add Ride</button></p>
+<dialog id="add_ride_popup" class="popups">
   <h3>Add Ride </h3>
   <p>How Far Did You Ride</p>
+  <input type="text" id="ride_distance_input" class="number_inputs">                                                 <forbrad hidden>This Line is for brads inputs</forbrad>
+  <input type="submit" id="ride_distance_submit">                                                                    <forbrad hidden>This Line is for brads inputs</forbrad>
+  <p><button class="open_close_buttons" id="add_ride_close" onclick=close_add_ride()>Close</button></p>
 </dialog>
- <p><button>Setup Service Reminder</button></p> 
+ <p><button id="add_service_reminder" onclick=open_add_reminder() class="open_close_buttons">Setup Service Reminder</button></p>
+ <dialog id="add_reminder_popup" class="popups">
+  <h3>Add Reminder</h3>
+  <p>What do you want to be reminded about</p>
+  <input type="text" id="service_reminder_what" class="word_inputs">                                                  <forbrad hidden>This Line is for brads inputs</forbrad>
+  <p>How Many Miles Till you Want to Be Reminded</p>
+  <input type="text" id="service_reminder_when" class="number_inputs">                                                <forbrad hidden>This Line is for brads inputs</forbrad>
+  <p><input type="submit" id="service_reminder_submit"> </p>                                                                 <forbrad hidden>This Line is for brads inputs</forbrad>
+  <p><button class="open_close_buttons" id="add_ride_close" onclick=close_add_reminder()>Close</button></p>
+</dialog> 
  <p><h2>Service Needed Now</h2></p>
 <h3><ul>
   <li><button class="add_log">Add To Log</button>Fork Service</li>
