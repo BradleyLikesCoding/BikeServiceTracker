@@ -10,7 +10,7 @@ ul {
 
 .add_log {
     color: rgb(4, 58, 88);
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     border-style: solid;
     border-color: rgb(4, 58, 88);
@@ -19,10 +19,11 @@ ul {
 
 button {
     cursor: pointer;
+    color: rgb(4, 58, 88);
 }
-.number_inputs {
-    width: 40px;
+.bottom_buttons {
+    margin-right: 10px;
 }
-.popups {
-    border-radius: 12px;
+body {
+    background-color: rgb(210, 234, 255);
 }
