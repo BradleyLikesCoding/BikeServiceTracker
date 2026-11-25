@@ -1,3 +1,3 @@
-function add_ride_popup_function() {
- document.getElementById("add_ride_popup").showModel();
+function open_add_ride() {
+ document.getElementById("add_ride_popup").showModal();
 }
