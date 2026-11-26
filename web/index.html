@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
- <head>
+
+<head>
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="style.css">
   <title>Bike Service</title>
@@ -12,32 +13,58 @@
 <body>
   <h1>Bike Service</h1>
 
- <p> <button id="add_ride" onclick=open_add_ride() class="open_close_buttons">Add Ride</button></p>
-<dialog id="add_ride_popup" class="popups">
-  <h3>Add Ride </h3>
-  <p>How Far Did You Ride</p>
-  <input type="text" id="ride_distance_input" class="number_inputs">                                                 <forbrad hidden>This Line is for brads inputs</forbrad>
-  <input type="submit" id="ride_distance_submit">                                                                    <forbrad hidden>This Line is for brads inputs</forbrad>
-  <p><button class="open_close_buttons" id="add_ride_close" onclick=close_add_ride()>Close</button></p>
-</dialog>
+  <a href="#" onclick="open_add_bike()" class="bottom_buttons">Add Bike</a>
+  <a href="#" onclick="open_remove_bike()" class="bottom_buttons">Remove Bike</a>
+  <a href="#" onclick="open_add_ride()" class="bottom_buttons">Add Ride</a>
+  <a href="#" onclick="open_add_reminder()" class="bottom_buttons">Setup Service Reminder</a>
 
- <p><button id="add_service_reminder" onclick=open_add_reminder() class="open_close_buttons">Setup Service Reminder</button></p>
- <dialog id="add_reminder_popup" class="popups">
-  <h3>Add Reminder</h3>
-  <p>What do you want to be reminded about</p>
-  <input type="text" id="service_reminder_what" class="word_inputs">                                                  <forbrad hidden>This Line is for brads inputs</forbrad>
-  <p>How Many Miles Till you Want to Be Reminded</p>
-  <input type="text" id="service_reminder_when" class="number_inputs">                                                <forbrad hidden>This Line is for brads inputs</forbrad>
-  <p><input type="submit" id="service_reminder_submit"> </p>                                                          <forbrad hidden>This Line is for brads inputs</forbrad>
-  <p><button class="open_close_buttons" id="add_ride_close" onclick=close_add_reminder()>Close</button></p>
-</dialog> 
- <p><h2>Service Needed Now</h2></p>
-<h3><ul>
-  <li><button class="add_log">Add To Log</button>Fork Service</li>
-  <li><button class="add_log">Add To Log</button>brakes</li>
-  <li><button class="add_log">Add To Log</button>wash</li>
- </ul>
+  <dialog id="add_bike_popup" class="popups">
+    <h3>Add Bike</h3>
+    <p>Bike Name</p>
+    <input type="text" id="add_bike_name">
+    <br><br>
+    <input type="submit" id="bike_add_submit">
+    <button class="open_close_buttons" onclick=close_add_bike()>Close</button>
+  </dialog>
+
+  <dialog id="remove_bike_popup" class="popups">
+    <h3>Remove Bike</h3>
+    <select id="remove_bike_name"></select>
+    <br><br>
+    <input type="submit" id="bike_remove_submit">
+    <button class="open_close_buttons" onclick=close_remove_bike()>Close</button>
+  </dialog>
+
+  <dialog id="add_ride_popup" class="popups">
+    <h3>Add Ride</h3>
+    <p>How Far Did You Ride</p>
+    <input type="text" id="ride_distance_input" class="number_inputs"> Miles
+    <br><br>
+    <input type="submit" id="ride_distance_submit">
+    <button class="open_close_buttons" id="add_ride_close" onclick=close_add_ride()>Close</button>
+  </dialog>
+
+  <dialog id="add_reminder_popup" class="popups">
+    <h3>Add Reminder</h3>
+    <p>What do you want to be reminded about</p>
+    <input type="text" id="service_reminder_what" class="word_inputs">
+    <p>How often do you want to Be reminded</p>
+    <input type="text" id="service_reminder_when" class="number_inputs"> Miles
+    <br><br>
+    <input type="submit" id="service_reminder_submit">
+    <button class="open_close_buttons" id="add_ride_close" onclick=close_add_reminder()>Close</button>
+  </dialog>
+
+  <p>
+  <h2>Service Needed Now</h2>
+  </p>
+  <h3>
+    <ul>
+      <li><button class="add_log">Add To Log</button>Fork Service</li>
+      <li><button class="add_log">Add To Log</button>brakes</li>
+      <li><button class="add_log">Add To Log</button>wash</li>
+    </ul>
   </h3>
-  <p><button class="bottom_buttons">Add Bike</button><button class="bottom_buttons">Remove Bike</button></p>
 </body>
-</html>
+
+</html>  

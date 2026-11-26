@@ -1,5 +1,6 @@
 Body {
-    text-align: center;
+    text-align: center;    
+    background-color: rgb(210, 234, 255);
 }
 
 ul {
@@ -21,15 +22,30 @@ button {
     cursor: pointer;
     color: rgb(4, 58, 88);
 }
+
 .bottom_buttons {
-    margin-right: 10px;
+    background-color: grey;
+    text-decoration: none;
+    color: black;
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    display: inline-flex;
+    vertical-align: top;
+    align-items: center;
+    justify-content: center
 }
-body {
-    background-color: rgb(210, 234, 255);
+
+.bottom_buttons:hover {
+    color: white;
 }
+
 .popups {
     border-radius: 12px;
 }
+
 .number_inputs {
     width: 30px;
 }
