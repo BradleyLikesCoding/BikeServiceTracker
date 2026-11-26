@@ -23,7 +23,7 @@
     <p>Bike Name</p>
     <input type="text" id="add_bike_name">
     <br><br>
-    <input type="submit" id="bike_add_submit">
+    <input type="submit" onclick="submit_add_bike()">
     <button class="open_close_buttons" onclick=close_add_bike()>Close</button>
   </dialog>
 
@@ -31,7 +31,7 @@
     <h3>Remove Bike</h3>
     <select id="remove_bike_name"></select>
     <br><br>
-    <input type="submit" id="bike_remove_submit">
+    <input type="submit" onclick="submit_remove_bike()">
     <button class="open_close_buttons" onclick=close_remove_bike()>Close</button>
   </dialog>
 
@@ -46,9 +46,11 @@
 
   <dialog id="add_reminder_popup" class="popups">
     <h3>Add Reminder</h3>
+    <p>What bike is this reminder for</p>
+    <select id="add_reminder_bike_name"></select>
     <p>What do you want to be reminded about</p>
     <input type="text" id="service_reminder_what" class="word_inputs">
-    <p>How often do you want to Be reminded</p>
+    <p>How often do you want to be reminded</p>
     <input type="text" id="service_reminder_when" class="number_inputs"> Miles
     <br><br>
     <input type="submit" id="service_reminder_submit">

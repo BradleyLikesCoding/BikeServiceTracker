@@ -13,6 +13,23 @@ function close_add_ride() {
 }
 
 function open_add_reminder() {
+    const bikeSelect = document.getElementById("add_reminder_bike_name");
+    while (bikeSelect.hasChildNodes()) {
+    bikeSelect.removeChild(bikeSelect.firstChild);
+    }
+    if (Object.keys(database).length > 0) {
+        Object.keys(database).forEach((key) => {
+            const option = document.createElement("option");
+            option.value = key;
+            option.textContent = key;
+            bikeSelect.appendChild(option);
+        });
+    } else {            
+        const option = document.createElement("option");
+        option.value = null;
+        option.textContent = "You have no bikes added";
+        bikeSelect.appendChild(option);
+    }
     document.getElementById("add_reminder_popup").showModal();
 }
 
@@ -24,7 +41,9 @@ function close_add_reminder() {
 
 function open_remove_bike() {
     const bikeSelect = document.getElementById("remove_bike_name");
-    
+    while (bikeSelect.hasChildNodes()) {
+    bikeSelect.removeChild(bikeSelect.firstChild);
+    }
     if (Object.keys(database).length > 0) {
         Object.keys(database).forEach((key) => {
             const option = document.createElement("option");
@@ -51,4 +70,17 @@ function close_remove_bike() {
 
 function close_add_bike() {
     document.getElementById("add_bike_popup").close();
+    document.getElementById("add_bike_name").value = "";
+}
+
+async function submit_add_bike() {
+    console.log(database);
+    database = await eel.add_bike(document.getElementById("add_bike_name").value)();
+    console.log(database);
+    close_add_bike();
+}
+
+async function submit_remove_bike() {
+    if (Object.keys(database).length > 0) database = await eel.remove_bike(document.getElementById("remove_bike_name").value)();
+    close_remove_bike();
 }
