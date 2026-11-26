@@ -27,3 +27,9 @@ button {
 body {
     background-color: rgb(210, 234, 255);
 }
+.popups {
+    border-radius: 12px;
+}
+.number_inputs {
+    width: 30px;
+}
