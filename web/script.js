@@ -74,9 +74,7 @@ function close_add_bike() {
 }
 
 async function submit_add_bike() {
-    console.log(database);
     database = await eel.add_bike(document.getElementById("add_bike_name").value)();
-    console.log(database);
     close_add_bike();
 }
 
