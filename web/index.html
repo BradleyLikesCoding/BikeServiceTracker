@@ -37,11 +37,13 @@
 
   <dialog id="add_ride_popup" class="popups">
     <h3>Add Ride</h3>
+    <p>What Bike Did You Ride</p>
+    <select id="add_ride_bike_name"></select>
     <p>How Far Did You Ride</p>
-    <input type="text" id="ride_distance_input" class="number_inputs"> Miles
+    <input type="number" id="ride_distance_input" class="number_inputs"> Miles
     <br><br>
-    <input type="submit" id="ride_distance_submit">
-    <button class="open_close_buttons" id="add_ride_close" onclick=close_add_ride()>Close</button>
+    <input type="submit" onclick="submit_add_ride()">
+    <button class="open_close_buttons" onclick=close_add_ride()>Close</button>
   </dialog>
 
   <dialog id="add_reminder_popup" class="popups">
@@ -53,8 +55,8 @@
     <p>How often do you want to be reminded</p>
     <input type="text" id="service_reminder_when" class="number_inputs"> Miles
     <br><br>
-    <input type="submit" id="service_reminder_submit">
-    <button class="open_close_buttons" id="add_ride_close" onclick=close_add_reminder()>Close</button>
+    <input type="submit" onclick="submit_add_reminder()">
+    <button class="open_close_buttons" onclick="close_add_reminder()">Close</button>
   </dialog>
 
   <p>
