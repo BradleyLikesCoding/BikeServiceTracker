@@ -23,24 +23,21 @@ button {
     color: rgb(4, 58, 88);
 }
 
-.bottom_buttons {
-    background-color: grey;
+.top_buttons {
+    background-color: rgb(147, 150, 167);
     text-decoration: none;
     color: black;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 2.5px;
+    margin-left: 2.5px;
     width: 100px;
-    height: 50px;
-    border-radius: 5px;
+    height: 40px;
+    border-radius: 8px;
     display: inline-flex;
     vertical-align: top;
     align-items: center;
-    justify-content: center
+    justify-content: center; 
 }
 
-.bottom_buttons:hover {
-    color: white;
-}
 
 .popups {
     border-radius: 12px;
