@@ -127,6 +127,31 @@ async function submit_add_reminder() {
     updateGUI();
 }
 
+function resetServiceList() {
+    document.getElementById("service_list").innerHTML = "";
+}
+
+function addServiceToList(name, miles) {
+    document.getElementById("service_list").innerHTML += `<br><li><button class="add_log">Has Been Serviced</button>${name + " - " + Math.abs(miles).toString() + ( miles > 0 ? " miles until service" : " miles since service needed" ) }</li>`
+}
+
 function updateGUI() {
-    document.getElementById("output-test").innerHTML = JSON.stringify(database);
+    resetServiceList();
+    const keys = Object.keys(database);
+    var isEmpty = true;
+    var serviceList = [];
+    for (var i = 0; i < keys.length; i++) {
+        for(var i2 = 0; i2 < database[keys[i]].length; i2++) {
+            isEmpty = false;
+            serviceList.push([database[keys[i]][i2]["name"], database[keys[i]][i2]["untilService"]]);
+        }
+    }
+    serviceList.sort((a, b) => a[1] - b[1]);
+    if (isEmpty) {
+        document.getElementById("service_list").innerHTML = "No Service Reminders Added";
+    } else {
+        for (var i = 0; i < serviceList.length; i++) {
+            addServiceToList(...serviceList[i]);
+        }
+    }
 }
