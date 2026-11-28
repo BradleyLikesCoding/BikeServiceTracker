@@ -1,6 +1,7 @@
 var database;
 (async function () {
     database = await eel.get_database()()
+    updateGUI()
 })();
 
 function open_add_ride() {
@@ -93,19 +94,39 @@ function close_add_bike() {
 async function submit_add_bike() {
     database = await eel.add_bike(document.getElementById("add_bike_name").value)();
     close_add_bike();
+    updateGUI();
 }
 
 async function submit_remove_bike() {
     if (Object.keys(database).length > 0) database = await eel.remove_bike(document.getElementById("remove_bike_name").value)();
     close_remove_bike();
+    updateGUI();
 }
 
 async function submit_add_ride() {
     if (Object.keys(database).length == 0) return;
     const bike = document.getElementById("add_ride_bike_name").value;
     const distance = document.getElementById("ride_distance_input").value;
+    for (var i = 0; i < database[bike].length; i++) {
+        database[bike][i]["untilService"] -= distance;
+    }
+    database = await eel.set_bike(bike, database[bike])();
+    close_add_ride();
+    updateGUI();
 }
 
 async function submit_add_reminder() {
+    if (Object.keys(database).length == 0) return;
+    const bike = document.getElementById("add_reminder_bike_name").value;
+    const name = document.getElementById("service_reminder_what").value;
+    const distance = document.getElementById("service_reminder_when").value;
+    
+    database[bike].push({untilService: distance, name: name, distance: distance});
+    database = await eel.set_bike(bike, database[bike])();
+    close_add_reminder();
+    updateGUI();
+}
 
+function updateGUI() {
+    document.getElementById("output-test").innerHTML = JSON.stringify(database);
 }
